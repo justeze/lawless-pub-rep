@@ -8,55 +8,70 @@ import Content from "../components/home/content";
 
 
 class home extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            menu: [],
-            cart: []
-        }
+    state = {
+        menus: [],
+        carts: []
     }
+
+
+
+    addToCart = (id_item, name, price, img) => {
+        
+        const index = this.state.carts.findIndex((item) => {
+            return item.id === id_item;
+
+        });
+
+        if (index >= 0) {
+            // console.log(this.state.carts)
+            this.state.carts.splice(index, 1);
+            this.setState({
+                carts: this.state.carts,
+            });
+        } else {
+            const newCart = {
+                id: id_item,
+                nama_produk: name,
+                qty: 1,
+                harga_produk: price,
+                gambar_produk: img,
+            };
+
+            this.setState({
+                carts: this.state.carts.concat(newCart),
+            });
+        }
+    };
+
     componentDidMount() {
-        const URLString = "http://localhost:9000/"
-        Axios.get(URLString)
+        // const URLString = "http://localhost:2300/menu"
+        Axios.get(process.env.REACT_APP_URLSTRING)
             .then((res) => {
                 // console.log(res)
                 this.setState({
-                    menu: [...res.data.data]
+                    menus: [...res.data.data]
                 })
             })
             .catch((err) => console.log(err))
     }
-    
-    // toggleMenu(id) {
-    //     const { menu } = this.state
-    //     const arrtodo = [...menu]
-    //     const result = arrtodo.map((item) => {
-    //         return item.id === id ? { ...item, isComplete: !item.isComplete } : item;
-    //     })
-    //     this.setState({
-    //         menu: result
-    //     })
-    //     console.log(result)
-    // }
+
 
     render() {
-        // console.log(this.state.menu)
-        // const { menu } = this.state
         return (
             <>
                 <Navbar />
                 <Sidebar />
-                <Sidecart
-                    arrMenu={this.state.menu}
-                    carts={this.state.cart}
-                    // toggleMenu={this.toggleMenu.bind(this)}
-                />
                 <Content
-            
-                    arrMenu={this.state.menu}
-                    // toggleMenu={this.toggleMenu.bind(this)}
-
+                    arrMenu={this.state.menus}
+                    addToCart={(id_item, name, price, img) =>
+                        this.addToCart(id_item, name, price, img)
+                    }
                 />
+                <Sidecart
+                    // arrMenu={this.state.menus}
+                    arrCart={this.state.carts}
+                />
+                
             </>
         )
 
