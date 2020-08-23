@@ -3,8 +3,7 @@ import "../../styles/home/navbar.css";
 import MenuImg from "../../assets/menu.png"
 import SearchImg from "../../assets/magnifying-glass.png"
 
-class Navbar extends React.Component {
-    render() {
+const Navbar = () => {
         return (
             <>
                 <div className="navbar">
@@ -23,6 +22,5 @@ class Navbar extends React.Component {
                 </div>
             </>
         )
-    }
 }
 export default Navbar
