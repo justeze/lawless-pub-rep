@@ -24,6 +24,11 @@
     margin-top: 25px;
     margin-left: 70px;
   }
+  .nav-link {
+    background-color: white;
+    border: none;
+    /* display: ; */
+  }
 /* .sidebar-left {
     height: 100%;
     width: 0;

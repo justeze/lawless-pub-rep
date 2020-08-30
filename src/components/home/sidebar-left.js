@@ -3,6 +3,7 @@ import "../../styles/home/sidebar-left.css";
 import ForkLogo from "../../assets/fork.png"
 import ClipboardLogo from "../../assets/clipboard.png"
 import AddItemLogo from "../../assets/add.png"
+import ModalAdd from "./addModal";
 
 
 class Sidebar extends React.Component {
@@ -14,10 +15,10 @@ class Sidebar extends React.Component {
                     <div className="sidebar-menu">
                         <img src={ForkLogo} alt="" />
                         <img src={ClipboardLogo} alt="" />
-                        <img src={AddItemLogo} alt="" />
+                        <button type="button" className="nav-link" data-toggle="modal" data-target="#modal-add"><img src={AddItemLogo} alt="" /></button>
                     </div>
                 </div>
-
+                <ModalAdd/>
             </>
         )
     }
