@@ -21,7 +21,7 @@ class ModalAdd extends React.Component {
             })
             .catch((err) => console.log(err))
     }
-    insertMenu = () => {
+    addMenu = () => {
         let formData = new FormData();
         formData.append("nama_produk", this.state.name);
         formData.append("harga_produk", this.state.price);
@@ -116,7 +116,7 @@ class ModalAdd extends React.Component {
                             <div className="modal-footer">
                                 <button type="button" className="btn  btn-pink btn-cancel" data-dismiss="modal" >Cancel</button>
                                 <button type="button" className="btn btn-blue btn-add" onClick={() => {
-                                    this.insertMenu();
+                                    this.addMenu();
                                 }} data-dismiss="modal">Add</button>
                             </div>
                         </div>
