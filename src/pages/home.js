@@ -1,7 +1,7 @@
 import React from "react";
 // import Axios from "axios"
 import { connect } from "react-redux";
-import { requestMenuCreator } from "../redux/actions/menu";
+import { requestMenuCreator } from "../redux/actions/action";
 
 import Navbar from "../components/home/navbar";
 import Sidebar from "../components/home/sidebar-left";

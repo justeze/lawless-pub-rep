@@ -39,13 +39,11 @@ const menuReducer = (state = initialState, {type, payload}) => {
         state.carts.splice(index, 1);
         return {
           ...state,
-          // carts: 1,
           carts: state.carts
         }
       } else {
         return {
           ...state,
-          // carts: 1,
           carts: state.carts.concat(payload)
         }
       }

@@ -49,9 +49,9 @@ class ModalAdd extends React.Component {
             })
             .catch(err => console.log(err))
     };
-    kambing = (event) => {
-        console.log(event.target.value)
-    }
+    // kambing = (event) => {
+    //     console.log(event.target.value)
+    // }
     render() {
         return (
             <>

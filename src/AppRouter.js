@@ -8,8 +8,8 @@ import login from "./pages/login";
 const AppRouter = () => {
   return (
     <Router>
-      <Route path="/index" component={home} />
-      <Route path="/login" component={login} />
+      <Route path="/" exact component={home} />
+      <Route path="/login" exact component={login} />
     </Router>
   );
 };

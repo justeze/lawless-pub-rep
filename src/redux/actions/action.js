@@ -1,5 +1,5 @@
 import * as actions from './actionTypes';
-import { getMenu } from "../../utils/menu";
+import { getMenu, authLogin } from "../../utils/menu";
 
 export const requestMenuCreator = () => {
   // console.log('action')
@@ -42,5 +42,12 @@ export const decreaseQty= (id) => {
 export const clearCart= () => {
   return {
     type: actions.CLEAR_CART
+  }
+}
+
+export const authLoginCreator = (name, password) => {
+  return {
+    type: actions.AUTH_LOGIN,
+    payload: authLogin(name, password),
   }
 }

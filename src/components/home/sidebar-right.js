@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux'
-import { increaseQty, decreaseQty, clearCart } from "../../redux/actions/menu";
+import { increaseQty, decreaseQty, clearCart } from "../../redux/actions/action";
 // import { addToCart } from '../../redux/actions/menu'
 
 import "../../styles/home/sidebar-right.css";

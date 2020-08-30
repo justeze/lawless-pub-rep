@@ -1,7 +1,7 @@
 import React from "react"
 import { connect } from 'react-redux'
 // import { requestMenuCreator } from "../../redux/actions/menu";
-import { addToCart } from '../../redux/actions/menu'
+import { addToCart } from '../../redux/actions/action'
 import "../../styles/home/content.css"
 
 
