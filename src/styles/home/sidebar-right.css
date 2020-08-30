@@ -2,10 +2,13 @@
 .cart-items{
   position: absolute;
   top: 55px;
+  right: 0;
   margin-left: 75%;
   width: 25%;
   height: 100%;
   text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
   /* background-color: black; */
   box-shadow: -5px 4px 10px rgba(0, 0, 0, 0.25);
 }
@@ -14,7 +17,7 @@
   margin-top: 20px;
 }
 .selected-items img{
-  height: 100px;
+  height: 80px;
   width: 100px;
 }
 

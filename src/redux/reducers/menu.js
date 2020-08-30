@@ -8,9 +8,9 @@ const initialState = {
   isFulfilled: false
 }
 
-const menuReducer = (state = initialState, action) => {
+const menuReducer = (state = initialState, {type, payload}) => {
   let newCart = [...state.carts]
-  switch (action.type) {
+  switch (type) {
     case actions.MENU_FETCH + actions.PENDING:
       return {
         ...state,
@@ -21,18 +21,18 @@ const menuReducer = (state = initialState, action) => {
         ...state,
         isRejected: true,
         isPending: false,
-        error: action.payload,
+        error: payload,
       }
     case actions.MENU_FETCH + actions.FULFILLED:
       return {
         ...state,
         isFulfilled: true,
         isPending: false,
-        menus: action.payload.data.data,
+        menus: payload.data.data,
       }
     case actions.ADD_TO_CART:
       const index = state.carts.findIndex((item) => {
-        return action.payload.id === item.id
+        return payload.id === item.id
       });
       // console.log(state.carts)
       if (index >= 0) {
@@ -46,12 +46,12 @@ const menuReducer = (state = initialState, action) => {
         return {
           ...state,
           // carts: 1,
-          carts: state.carts.concat(action.payload)
+          carts: state.carts.concat(payload)
         }
       }
     case actions.INCREASE_QUANTITY:
       const indexIncQty = state.carts.findIndex((item) => {
-        return item.id === action.payload.id;
+        return item.id === payload.id;
       })
 
       // let newCart = [...state.carts];
@@ -67,7 +67,7 @@ const menuReducer = (state = initialState, action) => {
     case actions.DECREASE_QUANTITY:
       const indexDecQty = state.carts.findIndex((item) => {
         console.log(state.carts)
-        return action.payload.id === item.id
+        return payload.id === item.id
       })
       // let newCart = [...state.carts]
       newCart[indexDecQty] = {

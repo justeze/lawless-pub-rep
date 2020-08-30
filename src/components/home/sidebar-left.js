@@ -6,21 +6,21 @@ import AddItemLogo from "../../assets/add.png"
 import ModalAdd from "./addModal";
 
 
-class Sidebar extends React.Component {
-    render() {
-        return (
-            <>
+const Sidebar = () => {
 
-                <div className="sidebar-left">
-                    <div className="sidebar-menu">
-                        <img src={ForkLogo} alt="" />
-                        <img src={ClipboardLogo} alt="" />
-                        <button type="button" className="nav-link" data-toggle="modal" data-target="#modal-add"><img src={AddItemLogo} alt="" /></button>
-                    </div>
+    return (
+        <>
+
+            <div className="sidebar-left">
+                <div className="sidebar-menu">
+                    <img src={ForkLogo} alt="" />
+                    <img src={ClipboardLogo} alt="" />
+                    <button type="button" className="nav-link" data-toggle="modal" data-target="#modal-add"><img src={AddItemLogo} alt="" /></button>
                 </div>
-                <ModalAdd/>
-            </>
-        )
-    }
+            </div>
+            <ModalAdd />
+        </>
+    )
+
 }
 export default Sidebar

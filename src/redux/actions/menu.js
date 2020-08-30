@@ -2,6 +2,7 @@ import * as actions from './actionTypes';
 import { getMenu } from "../../utils/menu";
 
 export const requestMenuCreator = () => {
+  // console.log('action')
   return {
     type: actions.MENU_FETCH,
     payload: getMenu(),
