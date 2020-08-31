@@ -26,7 +26,7 @@ const authReducer = (state = initialState, { type, payload }) => {
     case actions.AUTH_LOGIN + actions.FULFILLED:
       let admin = null;
       let login = null;
-      if (payload.data.success) {
+      if (payload.data.isSuccess) {
         console.log(payload.data.data.level_id)
         if (payload.data.data.level_id === 1) {
           admin = true;
